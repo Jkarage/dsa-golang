@@ -35,7 +35,7 @@ func (q *Queue) Dequeue() {
 	if q.IsEmpty() {
 		panic("An empty Queue")
 	}
-	q.MoveToStack2()
+	q.moveToStack2()
 	q.stack2.Pop()
 }
 
@@ -47,12 +47,12 @@ func (q Queue) Peek() int {
 	if q.IsEmpty() {
 		panic("an empty stack")
 	}
-	q.MoveToStack2()
+	q.moveToStack2()
 
 	return q.stack2.Peek()
 }
 
-func (q Queue) MoveToStack2() {
+func (q Queue) moveToStack2() {
 	if q.stack2.IsEmpty() {
 		for !q.stack1.IsEmpty() {
 			popped := q.stack1.Pop()
