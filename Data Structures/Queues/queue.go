@@ -1,7 +1,5 @@
 package queue
 
-import "fmt"
-
 type ArrayQueue struct {
 	Q     []int
 	front int
@@ -37,10 +35,4 @@ func (q *ArrayQueue) Dequeue() {
 
 func (q *ArrayQueue) IsEmpty() bool {
 	return len(q.Q) == 0
-}
-
-func main() {
-	var q ArrayQueue
-
-	fmt.Println(q)
 }
