@@ -1,0 +1,2 @@
+1- Given an integer K and a queue of integers, write code to reverse the
+order of the first K elements of the queue.
