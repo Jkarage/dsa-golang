@@ -1,20 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	sent := "green apple"
-	runesMap := make(map[rune]int)
-	fmt.Println(repeatedChar(sent, runesMap))
+	runesSet := make(map[rune]bool)
+	fmt.Println(repeatedChar(sent, runesSet))
 }
 
-func repeatedChar(s string, m map[rune]int) string {
+func repeatedChar(s string, m map[rune]bool) string {
 	for _, r := range s {
-		m[r]++
-	}
-	for _, r := range s {
-		if m[r] > 1 {
-			return string(r)
+		if b, ok := m[rune(r)]; !ok || !b {
+			m[rune(r)] = true
+		} else if ok {
+			return string(rune(r))
 		}
 	}
 	return ""
