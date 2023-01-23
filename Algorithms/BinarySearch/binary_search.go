@@ -28,3 +28,6 @@ func BinarySearch(h []int, n int) bool {
 	return false
 
 }
+
+// Usage
+// go run binary_search.go --needle 3
